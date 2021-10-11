@@ -1,0 +1,83 @@
+/* CSS Document */
+
+
+/* Using relative styling. This section defines body attributes as well as default type rules*/
+body {
+    background-color:ivory;
+    font-family: 'Amiri', Times, serif;
+    font-size: 100%; /*Font size set to 100% in body and then kept relative through 'em' in all block elements for accessibility, per w3Schools' best practices.*/
+}
+
+
+#content {
+    max-width: 1000px;
+    min-width: 360px;
+    margin: auto;
+    padding:40px;
+}
+
+/* h1 is used for my name, which I want to feature most prominently on both of my page. */
+h1 {
+    font-size: 3em;
+}
+
+/* h2 is used as the header for subsections of my site - Work Experience, Education, and Portfolio */
+
+h2 {
+    font-size: 2em;
+}
+
+/* h3 is used as a subheader to denote specific positions I have held and education I have completed.*/
+h3 {
+    font-size: 1.5em;
+}
+
+/* This is the text styling for my introductory, top line paragraph*/
+p.topline{
+    font-size: 3vw;
+}
+
+
+
+@media only screen and (min-width: 768px) {
+    p.topline{
+        font-size: 1.75em;
+    }
+    h2{
+        font-size: 2em;
+    }
+    h3{
+        font-size: 1.75em;
+    }
+}
+
+img.portrait{
+    border-radius: 50%;
+    max-width:100%;
+}
+
+/* Homepage layout*/
+.topline-flex{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+/* This section sets up the flexboxes for my topline summary and headshot. Per w3schools (https://www.w3schools.com/css/css_rwd_mediaqueries.asp), it is always best
+to design for mobile first, to improve load times, so the following flex boxes are setup to assume mobile/portrait tablet as the default. */
+
+div.topline-flex-left{
+    flex:100%;
+}
+
+div.topline-flex-right{
+    flex:100%;
+}
+
+@media only screen and (min-width: 768px) { /* For Desktop and landscape tablets. min-width value derived from w3schools suggestion (https://www.w3schools.com/css/css_rwd_mediaqueries.asp). */
+    div.topline-flex-left{ /*flexbox for my introductory paragraph */
+        flex: 60%
+    } 
+    div.topline-flex-right { /*flexbox for my headshot*/
+      flex: 40%;
+    }
+  }

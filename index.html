@@ -13,28 +13,90 @@
 
     <body>
         <div id='content'>
-            <h1>
-                Ridley Soudack
-            </h1>
-            <div class="topline-flex">
+            <header class='wrap-flex'>
+                <div class='header-flex-left'>
+                <h1>
+                    Ridley Soudack
+                </h1>
+                </div>
+                <div class = 'header-flex-right'>
+                    <ul class = 'navbar-list'>
+                        <li>
+                            <a class='navbar-link' href = 'portfolio.html'>Portfolio</a>
+                        </li>
+                        <li class = 'navbar-divider'>
+                            /
+                        </li>
+                        <li id = 'active'>
+                            <a class='navbar-link' href='index.html'>Resume</a>
+                        </li>
+                    </ul>
+                </div>
+            </header>
+            <div class="wrap-flex">
                 <div class='topline-flex-left'>
                     <p class='topline'>
-                        My name is Ridley Soudack. I make maps that tell stories, and breathe life into geospatial data. I have experience working with the suite of ESRI products, a number of relational database management systems, Python, and SQL.
+                        My name is Ridley Soudack. I make maps that tell stories and breathe life into geospatial data. I have experience working with the suite of ESRI products, a number of relational database management systems, Python, and SQL.
                     </p>
                     <p class='topline'>
                         Looking to draw more out of your data? Let me get you there.
                     </p>
                 </div>
                 <div class='topline-flex-right'>
-                    <img class='portrait' src='me.jpg' alt='Ridley Soudack Photo'>
+                    <img class='portrait' src='images/me.jpg' alt='Ridley Soudack Photo'>
                 </div>
             </div>
             <h2>
                 Work Experience
             </h2>
-            <h3>
-                Project Manager - Human Contact
-            </h3>
+            <section>
+                <h3>
+                    Project Manager - Human Contact
+                </h3>
+                <ul class='resume'>
+                    <li class='resume-item'>
+                        Experience managing teams and projects for a rapidly-growing creative and events agency, working with clients such as Shoppers Drug Mart, Home Hardware, and Japan Tobacco International
+                    </li>
+                    <li class='resume-item'>
+                        Tradeshow manager for corporate conferences, responsible for sponsorship campaigns totalling over $900,000 in sponsor commitment
+                    </li>
+                    <li class='resume-item'>
+                        Confident working as primary project manager for creative projects, communicating with clients and managing project quoting and invoicing
+                    </li>
+                    <li class='resume-item'>
+                        Technical experience performing Google Analytics data analysis across a range of client platforms
+                    </li>
+                </ul>
+            </section>
+            <h2>
+                Education
+            </h2>
+            <ul class="resume" id='education'>
+                <li class='resume-item'>
+                    <div class='wrap-flex'>
+                        <div class='education-flex-left'>GIS Applications Specialist (Ongoing)</div>
+                        <div class='education-flex-right'>Fleming College, ON</div>
+                    </div>
+                </li>
+                <li class='resume-item'>
+                    <div class='wrap-flex'>
+                        <div class='education-flex-left'>Bachelor of Arts - Sociology</div>
+                        <div class='education-flex-right'>Durham University, UK</div>
+                    </div>
+                </li>
+            </ul>
+            <footer class='flex-socials'>
+                <div>
+                    <a href='https://www.linkedin.com/in/ridley-soudack-1757081b4/' target='_blank' title='LinkedIn'>
+                        <img class='socials' src='images/LinkedIn.png' alt='LinkedIn'>
+                    </a>
+                </div>
+                <div>
+                    <a href='https://twitter.com/RidleySoudack' target='_blank' title='Twitter'>
+                    <img class='socials' src='images/Twitter.png' alt='Twitter'>
+                    </a>
+                </div>
+            </footer>
         </div>
     </body>
 </html>

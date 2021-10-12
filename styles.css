@@ -19,35 +19,75 @@ body {
 /* h1 is used for my name, which I want to feature most prominently on both of my page. */
 h1 {
     font-size: 3em;
+    margin: auto;
+    font-weight: bolder;
+    text-align: center;
 }
 
 /* h2 is used as the header for subsections of my site - Work Experience, Education, and Portfolio */
 
 h2 {
-    font-size: 2em;
+    font-size: 2.5em;
+    margin: 3% 0% 0%;
+    padding:0%;
+    font-weight: bold;
 }
 
 /* h3 is used as a subheader to denote specific positions I have held and education I have completed.*/
 h3 {
-    font-size: 1.5em;
+    font-size: 1.75em;
+    margin: 2% 0% 0%;
+    padding: 0%;
 }
 
 /* This is the text styling for my introductory, top line paragraph*/
 p.topline{
-    font-size: 3vw;
+    font-size: 1.25em;
+}
+
+a{
+    color: #464646;
+    text-decoration: none;
+    transition: all 0.25s;
+}
+
+a:hover{ /*Specify style settings for hovering on text links*/
+    color: black;
+    text-shadow: 0.5px 0.5px;
 }
 
 
+.resume{
+    list-style-type: circle;
+    font-size: 1.25em;
+    text-indent: 2%;
+    line-height: 1.1em;
+    padding: 0%;
+    margin: 0%;
 
+}
+
+/* Set spacing for resume item bullets */
+.resume-item{
+    padding: 0.5% 0%;
+}
+
+/*Sets spacing for education sub-section list. Because I wanted to use largely the same style as in my resume lists,
+I created this as an id rather than a class */
+#education{
+    list-style-type: none;
+    text-indent: 0%;
+}
+
+
+/*Responsive text sizing for desktops and landscape tablets*/
 @media only screen and (min-width: 768px) {
     p.topline{
         font-size: 1.75em;
+        margin-right: 10px;
     }
-    h2{
-        font-size: 2em;
-    }
-    h3{
-        font-size: 1.75em;
+    .resume{
+        font-size: 1.5em;
     }
 }
 
@@ -56,28 +96,147 @@ img.portrait{
     max-width:100%;
 }
 
+
+img.socials{
+    max-width: 100%;
+    transition: opacity 0.25s; /* w3Schools showed me that I can add transitions to make for more smooth hover states.*/
+}
+
+/* This stackoverflow thread showed me that the hover state could be controlled in image tags, not just links: https://stackoverflow.com/questions/18813299/changing-image-on-hover-with-css-html */
+img.socials:hover{
+    opacity: 60%;
+}
+
 /* Homepage layout*/
-.topline-flex{
+
+/*Sets up flexboxes to wrap around lines. Because almost all of my flexbox implementations will wrap, I created just one class to use across all implementations*/
+.wrap-flex{
     display: flex;
     flex-wrap: wrap;
 }
 
-/* This section sets up the flexboxes for my topline summary and headshot. Per w3schools (https://www.w3schools.com/css/css_rwd_mediaqueries.asp), it is always best
+/* This section sets up all of my flexbox implementations. Per w3schools (https://www.w3schools.com/css/css_rwd_mediaqueries.asp), it is always best
 to design for mobile first, to improve load times, so the following flex boxes are setup to assume mobile/portrait tablet as the default. */
 
-div.topline-flex-left{
+/* This section sets up formatting for my name and Navbar. */
+header {
+    height: 150px;
+}
+.header-flex-left { /*flexbox for my name */
+    flex: 100%;
+    align-self: center;
+}
+
+.header-flex-right { /*flexbox for my navbar */
+    flex: 100%;
+    align-self: center;
+    margin: auto;
+}
+
+
+
+.navbar-list { /* Here I set up my navbar list with no bullets, no margin and padding (to remove default browser settings, per w3Schools recommendation. */
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    font-size: 1.75em;
+    height: 40px;
+    text-align: center;
+    line-height: 40px; /* I set the line height here to be the same as the element height because my list elements contain multiple sizes of text, and this aligns them horizontally. */
+}
+
+/* I wanted my mobile navbar to be centered, which was surprisingly difficult to do, as float can only be assigned to left or right.
+I applied the solution found here:https://csswizardry.com/2011/01/create-a-centred-horizontal-navigation/ to get around this issue. */
+.navbar-list > li {
+    display: inline;
+}
+
+.navbar-link {
+    display:inline-block;
+    padding: 10px;
+}
+
+.navbar-divider{
+    font-size: 1.5em
+}
+
+#active{
+    text-decoration: underline;
+}
+
+@media only screen and (min-width: 768px) { /* For Desktop and landscape tablets. min-width value derived from w3schools suggestion (https://www.w3schools.com/css/css_rwd_mediaqueries.asp). */
+    .header-flex-left{ 
+        flex: 50%;
+        justify-content: left;
+    } 
+    .header-flex-right { 
+      flex: 50%;
+      justify-content: right;
+    }
+    .navbar-list > li{
+        float: right;
+    }
+    .navbar-link{
+        display: inline;
+    }
+  }
+
+
+
+/* This section sets up the flexboxes for my topline summary and headshot. */
+.topline-flex-left{ /*flexbox for my introductory paragraph */
     flex:100%;
 }
 
-div.topline-flex-right{
+.topline-flex-right{ /*flexbox for my headshot*/
     flex:100%;
 }
 
 @media only screen and (min-width: 768px) { /* For Desktop and landscape tablets. min-width value derived from w3schools suggestion (https://www.w3schools.com/css/css_rwd_mediaqueries.asp). */
-    div.topline-flex-left{ /*flexbox for my introductory paragraph */
-        flex: 60%
+    .topline-flex-left{ 
+        flex: 60%;
     } 
-    div.topline-flex-right { /*flexbox for my headshot*/
+    .topline-flex-right { 
       flex: 40%;
     }
   }
+
+/* This section sets up the flexboxes for the education section of my webpage.*/
+.education-flex-left{ /*flexbox for education title*/
+    flex:100%;
+}
+
+.education-flex-right{ /*flexbox for institution*/
+    flex:100%;
+    text-align: right;
+    text-indent: 2%;
+    color: #464646;
+    font-size: 1.25rem;
+}
+
+@media only screen and (min-width: 768px) { /* For Desktop and landscape tablets. min-width value derived from w3schools suggestion (https://www.w3schools.com/css/css_rwd_mediaqueries.asp). */
+    .education-flex-left{ 
+        flex: 60%;
+    } 
+    .education-flex-right { 
+      flex: 40%;
+      text-indent: 0%;
+      font-size: 1.5rem;
+    }
+  }
+
+/* Below I use flex boxes to set up my two external links - to my LinkedIn and Twitter pages */
+.flex-socials{
+    display: flex;
+    margin-top: 100px;
+    flex-direction: row;
+    justify-content: center;
+    align-content: flex-end;
+}
+
+/* I thought the child selector was a really cool way to select divs within a particular flex box when all the divs
+will have the same properties. */
+.flex-socials > div{
+    width: 30px;
+    margin: 10px;
+}

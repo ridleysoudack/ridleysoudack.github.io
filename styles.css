@@ -9,7 +9,6 @@ body {
     font-family: 'Amiri', Times, serif;
     font-size: 100%; /*Font size set to 100% in body and then kept relative through 'em' in all block elements for accessibility, per w3Schools' best practices.*/
     max-width: 1000px;
-    min-width: 360px;
     margin: auto;
     padding:40px;
 }

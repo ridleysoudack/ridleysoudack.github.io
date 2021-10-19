@@ -76,8 +76,10 @@ This 'Mobile First' design is to improve loading times for mobile users, per w3s
 /* ||| Header bar styling */
 
 /* This section sets up formatting for my title (name) and navbar. */
+/* *** DELIVERABLE - RESPONSIVE STYLING */
 header {
     height: 150px;
+    margin-bottom: 60px; /*Bottom margin added for mobile only to give my navbar some distance from the subsequent elements */
 }
 .header-flex-left, .header-flex-right { /*Flexboxes for my name and navbar, set up so that they will stack on one another for mobile browsers. The use of flex-wrap with differently sized flex-boxes at specific media breakpoints for responsive design derived from w3schools: https://www.w3schools.com/css/css3_flexbox_responsive.asp */
     flex: 100%;
@@ -124,6 +126,9 @@ flexboxes let me avoid the issue this thread would solve in the first place! Act
 
 /* *** DELIVERABLE - RESPONSIVE STYLING */
 @media only screen and (min-width: 768px) { /* For Desktop and landscape tablets. min-width value derived from w3schools suggestion (https://www.w3schools.com/css/css_rwd_mediaqueries.asp). */
+    header{
+        margin-bottom: 0;
+    }
     .header-flex-left {  /*Styling set up so that my navbar and name will appear on the same line for desktop screens, based on https://www.w3schools.com/css/css3_flexbox_responsive.asp */
         flex: 50%;
         justify-content: left;
